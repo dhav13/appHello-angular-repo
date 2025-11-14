@@ -1,0 +1,23 @@
+<div class="container text-center">
+    <h1>{{header}}</h1>
+    <div class="row">
+        <div class="d-flex gap-2">
+            <p>Msg of parent: {{msgTransfer}}</p>
+            <p>Couter: {{notificationCounter}}</p>
+            <button class="btn btn-primary" (click)="updateMsgFromChild1()">Send to Child 1</button>
+            <button class="btn btn-primary" (click)="updateMsgFromChild2()">Send to Child 2</button>
+        </div>
+        <div class="col">
+            <app-child-component 
+            (outputCounterForChild2FromParent)="sendToChild2Data($event)" 
+            (outputCounterToParentC1)="setData($event)" 
+            [reciverMsgChild1]= "msgTransfer" />
+        </div>
+        <div class="col">
+            <app-child2-component 
+            (outputCounterToParentC2)="setData($event)" 
+            [reciverMsgChild2]= "msgTransferTocilld2"  
+            [reciverMsgfromChild1]= "msgFromChild1forChild2"/>
+        </div>
+    </div>
+</div>

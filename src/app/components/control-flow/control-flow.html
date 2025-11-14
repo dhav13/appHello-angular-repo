@@ -1,0 +1,80 @@
+<p class="h1 bg-danger">control-flow works!</p>
+<h1>User: {{user | json }}</h1>
+
+<h1>Users: {{users | json}}</h1><br>
+<h2>Cars: {{cars}}</h2><br>
+<ul>
+    @for (car of cars; track car; let idx = $index ) {
+        <li>{{car}}</li>
+    }
+</ul>
+
+@for (car of cars; track car; let idx = $index; let last = $last ) {
+    <span>{{car}}</span>
+    @if (!last) {
+        <span>,</span>
+    }
+}
+
+<h2>Name: {{name | titlecase }}</h2>
+
+<h3>Scores : {{scores}}</h3>
+
+<p [style]="{'font-style': 'italic', 'font-size':'28px', 'font-weight':'bold'}">Control Flow practice</p>
+<div [style.background]= "flag ? 'red':'blue'" class="div-style-practice"></div>
+
+<div [class]= "divFlag ? 'div-custom-practiceV1':'div-custom-practiceV2'" class="div-style-practice"></div>
+
+
+<div  [class]="{'div-custom-practiceV1': divFlag}" class="div-style-practice"></div>
+
+<!-- <div [class]= "'div-style-practice'"></div> [interview type can be asked wheather we can directly us css applied class in angular [class] - Yes we can ] -->
+
+
+
+<table>
+    <caption>Order summary</caption>
+    <thead>
+        <tr>
+            <th scope="col">item</th>
+            <th scope="col">id</th>
+            <th scope="col">name</th>
+            <th scope="col">email</th>
+            <th scope="col">isActive</th>
+             <th scope="col">isActive-SwitchCase</th>
+            <th scope="col">isEven</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (user of users; track user.id; let idx = $index; let even = $even; let odd = $odd ) {
+        <!-- @for (user of emptyIdea; track user.id; let idx = $index; let even = $even; let odd = $odd ) { -->
+        @let computedtIdx = idx + 1;
+        <tr>
+            <td>{{ computedtIdx }}</td>
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td [style.background]= "user.isActive ? 'green':'red'">{{user.isActive}}</td>
+            <td>
+                @let status = user.isActive ? 'active' : 'inactive';
+                    @switch (status) {
+                    @case ('active') { <span>Active</span> }
+                    @case ('inactive') { <span>Inactive</span> }
+                    @default { <span>Unknown</span> }
+                }
+            </td>
+            @if(even){
+                <td>Yes</td>
+            }@else if(odd) {
+                <td>No</td>
+            }
+        </tr>
+        } @empty {
+        <tr>
+            <td colspan="6">
+                There are no items
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

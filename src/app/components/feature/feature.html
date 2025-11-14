@@ -1,0 +1,22 @@
+<p>feature works! {{featureName}}</p>
+<input type="email" name="user_email" [(ngModel)]="defaultEmail" placeholder="Enter your email" (keypress)="updateEmail($event)"
+(blur)="updateEmailonblur($event)" />
+<br>
+<br>
+<button class="btn btn-primary" (click)="updateFeatureName($event)">Click Me</button>
+
+<h2>{{defaultEmail}}</h2>
+
+<hr>
+<h3>Json Date - {{now | json}}</h3>
+
+<h3>OG Date - {{now}}</h3>
+
+<h3>Date - {{now | date}}</h3>
+
+<h3>Short Date - {{now | date:'short':'M/d/yy, h:mm a'}}</h3>
+
+<h3>Long Date - {{now | date:'longDate'}}</h3>
+
+<hr>
+<h3>Currency - {{currencyDemo | currency:'INR':'symbol':'1.1-2':'en-IN'}}</h3>
