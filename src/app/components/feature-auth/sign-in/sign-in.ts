@@ -13,7 +13,7 @@ export class SignIn implements OnInit {
     email: new FormControl('', [Validators.email, Validators.required]),
     password: new FormControl('', [Validators.required, passwordStrengthPattern()]),
     rememberMe: new FormControl(true)
-  });
+  }); //this entire code can be done using form builder - DIY
 
   constructor(){}
 
