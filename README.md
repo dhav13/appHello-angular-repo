@@ -138,6 +138,7 @@ Use the "de facto industry standard" (Conventional Commits) for clean and scalab
 🧱 Example Table
 Type	    Meaning	                        Example
 feat	    A new feature	                feat(profile): add profile picture upload
+fixup       A feature fixup                 fixup(profile): add new code in profile picture
 fix	        A bug fix	                    fix(api): handle null response gracefully
 chore	    Routine tasks or maintenance	chore: update npm packages
 refactor	Code improvement without functional changes	refactor(auth): simplify login flow
