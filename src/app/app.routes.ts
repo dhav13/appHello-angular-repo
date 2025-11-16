@@ -19,14 +19,14 @@ export const routes: Routes = [
         //loadComponent: () => import('./components/products/products').then(mod => mod.Products)
         loadChildren: () => import('./components/products/products.routes').then((m) => m.PRODUCT_ROUTES),
     },
-    // { 
-    //     path: 'v1', 
-    //     redirectTo: 'product', 
-    //     pathMatch: 'prefix' 
-    // },
     {
-        path: '**',  //wild card route, should be kept at last
-        // component: NoPageFound
-        loadComponent: () => import('./components/no-page-found/no-page-found').then(mod => mod.NoPageFound)
-    }
+        path:'feature-auth',
+        loadChildren:() => import('./components/feature-auth/feature-auth.routes').then((m) => m.FEATURE_AUTH_ROUTES)
+    },
+    // {
+    //     path: '**',  //wild card route, should be kept at last
+    //     // component: NoPageFound
+    //     loadComponent: () => import('./components/no-page-found/no-page-found').then(m => m.NoPageFound)
+    // }
+
 ];

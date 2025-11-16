@@ -72,7 +72,9 @@
 - FormControl, FormGroup, FormBuilder  
 - Custom validators (sync & async)  
 - Error handling and form status  
-- Dynamic forms (optional)  
+- Custom validator
+- Dynamic forms (optional)
+
 ---
 ## 13. Services
 - What are services and why use them  
@@ -84,7 +86,7 @@
 ## 14. Pipes & Directives
 ### Pipes
 - Built-in Pipes (date, uppercase, currency, etc.)  
-- Custom Pipes (pure vs impure)
+- Custom Pipes (pure vs impure) - Interview theory
 ### Directives
 - Built-in Directives (ngIf, ngFor, ngClass, ngStyle)  
 - Custom Directives (attribute & structural)  
@@ -129,3 +131,16 @@
 - Route resolvers  
 - Standalone configuration patterns  
 - Unit Testing (Components, Services, Pipes)
+
+Commit Message Convention
+Use the "de facto industry standard" (Conventional Commits) for clean and scalable version history.
+
+🧱 Example Table
+Type	    Meaning	                        Example
+feat	    A new feature	                feat(profile): add profile picture upload
+fix	        A bug fix	                    fix(api): handle null response gracefully
+chore	    Routine tasks or maintenance	chore: update npm packages
+refactor	Code improvement without functional changes	refactor(auth): simplify login flow
+style	    Code style or formatting updates	style: format files using prettier
+docs	    Documentation changes	docs(readme): update setup instructions
+build	    Build changes	build: configuraiton changes or packages added

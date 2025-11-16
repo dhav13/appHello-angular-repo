@@ -18,6 +18,12 @@
         <li routerLinkActive="custom-active" [routerLinkActiveOptions]="{exact: true}" (click)="redirectToProductDetails()" class="nav-item">
           <a class="nav-link active" aria-current="page">Product Details</a>
         </li>
+        <li routerLinkActive="custom-active" [routerLink]="['/feature-auth/sign-in']" [routerLinkActiveOptions]="{exact: true}" class="nav-item">
+          <a class="nav-link active" aria-current="page">SignIn</a>
+        </li>
+        <li routerLinkActive="custom-active" [routerLink]="['/feature-auth/sign-up']" [routerLinkActiveOptions]="{exact: true}" class="nav-item">
+          <a class="nav-link active" aria-current="page">SignUp</a>
+        </li>
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
