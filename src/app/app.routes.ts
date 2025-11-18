@@ -2,8 +2,13 @@ import { Routes } from '@angular/router';
 import { HomePage } from './components/home-page/home-page';
 import { Products } from './components/products/products';
 import { NoPageFound } from './components/no-page-found/no-page-found';
+import { FeatureService } from './components/feature-service/feature-service/feature-service';
 
 export const routes: Routes = [
+    {
+        path: 'service', 
+        component: FeatureService,
+    },
     {
         path: '',   // empty loading ruote
         redirectTo: 'home',
