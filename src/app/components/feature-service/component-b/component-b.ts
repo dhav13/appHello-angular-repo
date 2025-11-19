@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MainService } from '../data-access/services/main-service';
 
 @Component({
@@ -7,17 +7,27 @@ import { MainService } from '../data-access/services/main-service';
   templateUrl: './component-b.html',
   styleUrl: './component-b.css',
 })
-export class ComponentB {
+export class ComponentB implements OnInit {
   #mainBService = inject(MainService)
   componentBMsg: string = this.#mainBService.dataMsg
-  
 
-  updateBService(){
+  // constructor(public mainService:MainService){
+  // }
+
+  ngOnInit(): void {
+    this.listeningToSubject()
+  }
+
+  updateBService() {
     console.log("Component B trigger")
     this.#mainBService.dataMsg = "Changing Main service dataMsg from Component B"
     this.#mainBService.calculationOfMarks("ComponentB")
   }
 
-  // constructor(public mainService:MainService){
-  // }
+  listeningToSubject() {
+    this.#mainBService.counter.subscribe((value) => {
+      //observer block
+      console.log("Component B - Counter Value", value)
+    })
+  }
 }
