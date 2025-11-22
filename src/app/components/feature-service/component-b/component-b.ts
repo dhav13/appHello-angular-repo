@@ -10,12 +10,13 @@ import { MainService } from '../data-access/services/main-service';
 export class ComponentB implements OnInit {
   #mainBService = inject(MainService)
   componentBMsg: string = this.#mainBService.dataMsg
-
+  valueOfBCounter = 0;
   // constructor(public mainService:MainService){
   // }
 
   ngOnInit(): void {
     this.listeningToSubject()
+    //this.listeningToBehaviourSubject()
   }
 
   updateBService() {
@@ -29,5 +30,16 @@ export class ComponentB implements OnInit {
       //observer block
       console.log("Component B - Counter Value", value)
     })
+  }
+
+   listeningToBehaviourSubject() {
+    this.#mainBService.counterBehaviour.subscribe((value) => {
+      //observer block
+      console.log("Component B - Behaviour Counter Value", value)
+    })
+  }
+
+  updateToBehaviourBCounter(){
+    this.#mainBService.counterBehaviour.next(this.valueOfBCounter + 1)
   }
 }

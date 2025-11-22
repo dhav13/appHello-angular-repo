@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -7,6 +7,7 @@ import { Subject } from 'rxjs';
 export class MainService {
   dataMsg:string = 'Msg from Main Service'
   counter = new Subject<number>();
+  counterBehaviour = new BehaviorSubject<number>(5)
 
   calculationOfMarks(component : string){
     console.log("This was triggered by ", component)

@@ -17,8 +17,9 @@ export class ComponentA implements OnInit {
 
   ngOnInit(): void {
     this.listeningToSubject()
+    this.listeningToBBehaviourSubject()
   }
-  
+
   updateService(){
     console.log("Component A trigger")
     this.#mainService.dataMsg = "Chaning Main service dataMsg from Component A"
@@ -29,11 +30,22 @@ export class ComponentA implements OnInit {
     this.#mainService.counter.next(this.valueOfCounter + 1)
   }
 
+  updateToBehaviourCounter(){
+    this.#mainService.counterBehaviour.next(this.valueOfCounter + 1)
+  }
+
   listeningToSubject(){
      this.#mainService.counter.subscribe((value) => {
       this.valueOfCounter = value
       //observer block
       console.log("Component A - Counter Value", value)
+    })
+  }
+
+    listeningToBBehaviourSubject() {
+    this.#mainService.counterBehaviour.subscribe((value) => {
+      //observer block
+      console.log("Component A - Behaviour Counter Value", value)
     })
   }
 }
