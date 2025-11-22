@@ -3,11 +3,16 @@ import { HomePage } from './components/home-page/home-page';
 import { Products } from './components/products/products';
 import { NoPageFound } from './components/no-page-found/no-page-found';
 import { FeatureService } from './components/feature-service/feature-service/feature-service';
+import { FeatureSignals } from './components/feature-signals/feature-signals/feature-signals';
 
 export const routes: Routes = [
     {
-        path: 'service', 
+        path: 'service',
         component: FeatureService,
+    },
+    {
+        path: 'signals',
+        component: FeatureSignals,
     },
     {
         path: '',   // empty loading ruote
@@ -25,8 +30,8 @@ export const routes: Routes = [
         loadChildren: () => import('./components/products/products.routes').then((m) => m.PRODUCT_ROUTES),
     },
     {
-        path:'feature-auth',
-        loadChildren:() => import('./components/feature-auth/feature-auth.routes').then((m) => m.FEATURE_AUTH_ROUTES)
+        path: 'feature-auth',
+        loadChildren: () => import('./components/feature-auth/feature-auth.routes').then((m) => m.FEATURE_AUTH_ROUTES)
     },
     // {
     //     path: '**',  //wild card route, should be kept at last

@@ -9,24 +9,27 @@
          <li routerLinkActive="custom-active" [routerLink]="['/service']" class="nav-item">
           <a class="nav-link active" aria-current="page">Service</a>
         </li>
+         <li routerLinkActive="custom-active" [routerLink]="['/signals']" class="nav-item">
+          <a class="nav-link active" aria-current="page">Signals</a>
+        </li>
         <li routerLinkActive="custom-active" [routerLink]="['/home']" class="nav-item">
           <a class="nav-link active" aria-current="page">Home</a>
         </li>
-        <li routerLinkActive="custom-active" [routerLink]="['/product']" class="nav-item">
+        <!-- <li routerLinkActive="custom-active" [routerLink]="['/product']" class="nav-item">
           <a class="nav-link active" aria-current="page">Product</a>
-        </li>
+        </li> -->
         <!-- <li routerLinkActive="custom-active" [routerLink]="['/product/product-details/101']" class="nav-item">
           <a class="nav-link active" aria-current="page">Product Details</a>
         </li> -->
-        <li routerLinkActive="custom-active" [routerLinkActiveOptions]="{exact: true}" (click)="redirectToProductDetails()" class="nav-item">
+        <!-- <li routerLinkActive="custom-active" [routerLinkActiveOptions]="{exact: true}" (click)="redirectToProductDetails()" class="nav-item">
           <a class="nav-link active" aria-current="page">Product Details</a>
-        </li>
-        <li routerLinkActive="custom-active" [routerLink]="['/feature-auth/sign-in']" [routerLinkActiveOptions]="{exact: true}" class="nav-item">
+        </li> -->
+        <!-- <li routerLinkActive="custom-active" [routerLink]="['/feature-auth/sign-in']" [routerLinkActiveOptions]="{exact: true}" class="nav-item">
           <a class="nav-link active" aria-current="page">SignIn</a>
         </li>
         <li routerLinkActive="custom-active" [routerLink]="['/feature-auth/sign-up']" [routerLinkActiveOptions]="{exact: true}" class="nav-item">
           <a class="nav-link active" aria-current="page">SignUp</a>
-        </li>
+        </li> -->
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
