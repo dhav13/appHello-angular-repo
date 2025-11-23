@@ -117,7 +117,24 @@
 - Serive will got keep data(washout) when refresh, so regain the same data.
 ---
 
-## 18. HTTP & APIs
+## 18. Rxjs
+- Observables, Observer, Subcriber
+- Operators -
+    of()
+    from()
+    map()
+    switchMap()
+    filter()
+    takeUntil()
+    debounceTime()
+    distinctUntilChanged()
+    tap()
+    catchError()
+    finalize()
+    retry() / retryWhen()
+
+
+## 19. HTTP & APIs
 - Observable,Observer,Subscriber
 - Using HttpClientModule  
 - GET, POST, PUT, DELETE methods  
@@ -128,14 +145,14 @@
 - Session & Local Storage
 ---
 
-## 19. Subject & BehaviouSubject
+## 20. Subject & BehaviouSubject
 ---
 
-## 20. Signals & Component Signals
+## 21. Signals & Component Signals
 - Signals, Computed Signals, Linked Signals
 ---
 
-## 21. Bonus (Future Topics)
+## 22. Bonus (Future Topics)
 - Signals API  
 - State management (@ngrx/store)  
 - Lazy loading + preloading strategies  

@@ -4,6 +4,7 @@ import { Products } from './components/products/products';
 import { NoPageFound } from './components/no-page-found/no-page-found';
 import { FeatureService } from './components/feature-service/feature-service/feature-service';
 import { FeatureSignals } from './components/feature-signals/feature-signals/feature-signals';
+import { ProductsList } from './components/feature-products/products-list/products-list';
 
 export const routes: Routes = [
     {
@@ -13,6 +14,10 @@ export const routes: Routes = [
     {
         path: 'signals',
         component: FeatureSignals,
+    },
+    {
+        path: 'products-list',
+        component: ProductsList,
     },
     {
         path: '',   // empty loading ruote
