@@ -159,6 +159,7 @@
 - Route resolvers  
 - Standalone configuration patterns  
 - Unit Testing (Components, Services, Pipes)
+- Interceptors (Context token)
 
 Commit Message Convention
 Use the "de facto industry standard" (Conventional Commits) for clean and scalable version history.

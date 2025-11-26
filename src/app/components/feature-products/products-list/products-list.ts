@@ -12,12 +12,20 @@ export class ProductsList implements OnInit, OnDestroy {
   #productService = inject(ProductsService)
   subscriptionValue!: Subscription;
   ngOnInit() {
-  this.subscriptionValue = this.#productService.observable.subscribe((x) => {
-      // Observer Block 
-      console.log(x)
-    });
+  // this.subscriptionValue = this.#productService.observable.subscribe((x) => {
+  //     // Observer Block 
+  //     console.log(x)
+  //   });
+  this.getAllPosts();
   }
   ngOnDestroy() {
     this.subscriptionValue.unsubscribe()
   }
+
+  getAllPosts(){
+    this.#productService.getProductList().subscribe((response:any)=>{
+      console.log("Get All Post Fake API ", response)
+    })
+  }
+
 }
