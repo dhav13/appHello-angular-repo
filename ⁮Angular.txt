@@ -1,0 +1,240 @@
+VS Code Extension - 
+Angular Language Services
+Angular2 switcher
+Auto Rename Tag
+Material Icon Theme
+
+
+01-Nov-2025 (feature/)
+code . -- to open VS from cmd when in path
+
+Ctr+shi+` - to open terminal
+
+ng serve - to run the project
+
+ng new project-name --> to create new project
+
+ng g c components/feature --skip-tests(this will not create spec.ts file) --- create new component
+
+https://www.npmjs.com/ -- node package manager
+
+package.json - 
+1) "start": "ng serve --port 4300 --open", ---> in script section to change default port and auto open browser using npm start
+2)shows you depedecies you install > "dependencies" -- pacakge you installed, "devDependencies" -- packages which "dependencies" is dependent
+
+package-lock json -- logs/ detail entrires of packages
+
+src --> 
+main.ts -- enter point of project
+
+app.config.ts --> will consistes of global configuration
+
+
+self learn
+difference betwen npm start and ng serve
+
+
+08-Nov-2025(1 morning - control-flow/)
+#input1 -- eqevalent to "id=input1"
+interface -- ng g interface components/control-flow/model  <-- this will create mode.ts file with one interface "Model"
+in-build pipes - titlecase {json - mostly for debugging}
+
+npm install bootstrap@4.6.2 -- consider latest version
+after install boostrap make entry in of style and script --
+"styles": [
+              "src/styles.css",
+              "node_modules/bootstrap/scss/bootstrap.scss"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
+
+Self learn
+for attribute(html concept)
+inline element vs block level element
+display block/inline/inline-block - understanding
+@for - even/odd/index, @if, @empty - html table with array data,
+--- switch case (show this in next lecture) - Done
+
+09-Nov-2025 (2, Morning & Evening)
+avoid concat(+), only use "+" for addition
+ngStyle & ngClass/style & class (--this are attribute directive)
+Currency, date pipes
+avoid circular dependencies of component
+Data Sharing Between Components using Input and output decorator
+reciverMsgChild1: string | null -- we have give 2 type of types
+[] - square bracket to grab the data frm .ts
+@--decorator - when we need to add extra feature, @Input -- this is in-build decorator
+
+Self learn - 
+in-build pipes - date - locale and timezone
+## 9. @placeholder, and @loading
+- Deferred loading of components **
+- Improving performance and reducing initial bundle size
+HTML & CSS - Basics, Element, Attriute, Paragraphys, Styles, Images, Tables, List, div, class, id and layout
+Counter example for child2 needs to be done---
+
+10-Nov-2025 (1 - Morning)
+How data is shared
+When we direct do ruote from browser than page will load coz of browser behaviour
+Simple Route, Lazy loading ruote, Empty ruote and wild card ruote
+
+Self learn - 
+data sharing between compoent
+child to parent/child to child output decorator
+## 10. NgOptimizedImage Directive
+pathMatch in router
+
+11-Nov-2025 - Morning
+Child ruotes
+
+12-Nov-2025 - Morning
+# --> mena protected
+Compoent-to-Compoent data passing --
+	Create parent Component
+	Create child Component
+		Note - Parent-To-Child => 
+		=> Creating receiver of data using @Input decorator(Ex - @Input() reciverMsgChild1: string = "default")
+		=> Binding Input decorator variable in child selector inside parent component(Ex - [reciverMsgChild1]= "msgTransfer")
+		Note - Child to Parent =>
+		=> Create sender of data of @Output decorator inside child compoenent(Ex - @Output() outputCounterToParentC1 = new EventEmitter<number>())
+		=> Create a method inside child component to emit the data to parent component(Ex - this.outputCounterToParentC1.emit(1))
+		=> Create a receiver inside a child selector in parent component (Ex - (outputCounterToParentC1)="setData($event)")
+
+14-Nov-2025 - Morning
+npm install -- to install all packarge from package.json
+Git - Setup -- 
+	git -v
+	git init
+	git add .   --- "." mean all
+	git commit -m "feat(Auth): add signIn:teamplateDrivenForm and signUp:reativeForm"
+	git push
+** git commit --allow-empty -m "empty-commit" --- for empty commit without making any chnages in files
+Self Learn -
+	Child2 to child 1
+	Child to child counter count
+
+15-Nov-2025 - Morning
+RouterModule -- is supper set for Router, so for we can also take RouterOutlet which child-set for Routing
+Forms 
+	=> Template Driven Form 
+		=> Small forms 
+			=> Login 
+		=> In build Validators (min, max, email, required)
+		=> Custom Validators 
+		=> logic in .html
+		
+		=> HTML - Form Structure 
+		=> TS - FormBuilder
+		=> HTML <=> TS
+	=> Reactive Form 
+		=> Complex form 
+		=> SignUp
+		=> => Custom Validators 
+		=> logic in .ts
+		
+		=> HTML - Form Structure 
+		=> TS - FormBuilder
+		=> HTML <=> TS
+
+
+Self learning Global - 
+Custom Pipes (pure vs impure) - Interview theory
+
+16-Nov-2025 - Morning
+Reactive Form
+.ts -- what should be where in class, follow pattern
+	properties
+	constructor
+	LifeCycle hook
+2nd Session - Nighty Night
+#actorForm="ngForm" -- FormModule
+
+
+Selflearn - 
+ngClass danger - after validation error div need to be invisible
+custom validator using Directive
+Form - add 2 radio button in template drive form and integrate in form
+Dynamic validator
+Pattern in template driven form using regx
+FormBuilder - Signin - DIY
+
+18-Nov-2025 - Morning
+ng g s components/feature-service/data-access/services/main-service -- to create a service file
+Services are used to maintain all the common code together so we can re-use at the multiple places, example - API are kept in service, data which we want to share with components are also stored in services
+Note - Services data get wash-out when user refresh the browser, services should not have circular dependency[never call services-to-service]
+
+
+19-Nov-25 - Morning
+Subject & BehaviourSubject
+Learn Rxjs
+service name should be same(highly recommendation) - example #mainService in our code should be same it all files, we made a mistake of not doing it
+OnIt is only called onces, where as Onchange can be called multi, that is why we put subscribe() in OnIt, but we can also but that in other trigger method i.e. based on when you want to start listening
+
+22-Nov-25 - Morning
+use "()" while using Signal variables
+only in class inside without type will work(let, const not needed), but inside any other function/fat-arrow function we need to give const/let to a varible(check feature-signal main service file)
+
+Repo/WorkSpace - NxEcom 
+default bracnh - master
+stage - STG
+develop - UAT 
+development - 
+	=> C1 => feat(feature-login):  JIRA [OP-001]
+	=> C2 => 
+	- feat-login branch - based on development
+		=> C1 : feat(feature-login):  JIRA [OP-001]
+		=> C2 : fixup(feature-login): MSG 
+		=> C3 : fixup(feature-login): MSG
+		
+		=> C1 : feat(feature-login):  JIRA [OP-001] => Raising PR 
+		=> SQUASH => C2 : fixup(feature-login): MSG 
+		=> SQUASH => C3 : fixup(feature-login): MSG
+		
+	- feat-dashboard branch - based on development
+		=> C1 : feat(feature-dashboard):  asxsJIRA [OP-001]
+		=> C2 : fixup(feature-dashboard): MSG 
+		=> C3 : fixup(feature-dashboard): MSG
+
+Self learning
+Linked Signal - Combination(Advance version) of Signal and Computed Signal
+
+23-Nov-2025 - Morning
+
+Self Learn
+rxjs docs
+of()
+from()
+map()
+switchMap()
+filter()
+takeUntil()
+debounceTime()
+distinctUntilChanged()
+tap()
+catchError()
+finalize()
+retry() / retryWhen()
+https://github.com/ShreyasAmbre/rxjsObservables -- 
+
+26-Nov-2025 - Morning
+
+
+Self Learn -
+Aysnc/Await - Await can't let us if API call was resolved, Promise solved that problem - Promises returns two step {Resolved, Reject}
+Observeable - Advanced version of Promises
+HttpClient -- allows API call and in returns give Observable, that we why we can subscribe it
+
+future explanation
+** Editor config for VS code
+** ESlint
+change detection
+AsyncPipe
+defer
+life cycle hooks
+Input and output singnals
+pathMatch in route
+Route Guards (CanActivate, CanDeactivate)
+Change Detection (default vs OnPush) — (advanced)
+Route Guards (CanActivate, CanDeactivate)
+Dynamic forms (optional) - like example, when "others" selected, textbox is visible for extra info
