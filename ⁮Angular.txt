@@ -6,6 +6,10 @@ Material Icon Theme
 
 
 01-Nov-2025 (feature/)
+ng version / ng v -- to check Angular version
+
+node -v -- to check node.js version
+
 code . -- to open VS from cmd when in path
 
 Ctr+shi+` - to open terminal
